@@ -326,80 +326,55 @@
   .why-card h4{font-size:1.06rem; color:var(--on-stage); line-height:1.3;}
   .why-card p{font-size:.88rem; color:var(--on-stage-soft); line-height:1.6;}
 
-  /* ============ DIGITAL / SOCIAL ============ */
-  .social-strip{
+  /* ============ CAMPAIGN ROLLOUT ============ */
+  .platform-chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:28px;}
+  .platform-chips span{
+    font-size:.76rem; letter-spacing:.03em; color:var(--on-stage-soft); border:1px solid var(--gold-line);
+    padding:8px 16px; border-radius:20px; background:rgba(226,145,79,.05);
+  }
+
+  .campaign-strip{
     display:flex; gap:26px; overflow-x:auto; padding:6px 6px 18px; margin-top:8px;
     scroll-snap-type:x proximity; scrollbar-width:thin; scrollbar-color:var(--gold-line) transparent;
   }
-  .social-unit{flex:0 0 auto; scroll-snap-align:start; display:flex; flex-direction:column; gap:12px;}
-  .social-unit .plat-row{display:flex; align-items:baseline; gap:8px;}
-  .social-unit .plat{font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-bright); font-weight:700;}
-  .social-unit .fmt{font-size:.7rem; letter-spacing:.06em; color:var(--on-stage-soft);}
-  .social-unit .cap{font-size:.83rem; color:var(--on-stage-soft); line-height:1.5; max-width:26ch;}
+  .campaign-card{flex:0 0 auto; display:flex; flex-direction:column; gap:14px;}
+  .campaign-card .cplat-row{display:flex; align-items:baseline; gap:10px;}
+  .campaign-card .cplat{font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-bright); font-weight:700;}
+  .campaign-card .ctag{font-size:.66rem; letter-spacing:.06em; text-transform:uppercase; color:var(--on-stage-soft);}
+  .campaign-card .ccap{font-size:.83rem; color:var(--on-stage-soft); line-height:1.5; max-width:28ch;}
 
-  .mock{position:relative; overflow:hidden; background:#0c0904; box-shadow:0 18px 40px -22px rgba(0,0,0,.6); border:1px solid rgba(245,238,225,.1);}
-  .mock img{width:100%; height:100%; object-fit:cover; display:block;}
-  .mock .avatar{
-    width:22px; height:22px; border-radius:50%; background:linear-gradient(135deg,var(--gold),#7A3E17);
-    color:#1D140B; font-family:var(--serif); font-weight:700; font-size:.66rem; display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  .cframe{
+    position:relative; overflow:hidden; border-radius:12px; background:#0c0904;
+    border:1px solid rgba(245,238,225,.1); box-shadow:0 18px 40px -22px rgba(0,0,0,.6); transition:transform .4s ease;
   }
-  .mock .ic{opacity:.92;}
+  .cframe img{width:100%; height:100%; object-fit:cover; display:block;}
+  .campaign-card:hover .cframe{transform:translateY(-4px);}
+  .cframe .cfade{position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.04) 45%, rgba(0,0,0,.72) 100%); z-index:1;}
+  .cframe .cnum{
+    position:absolute; top:14px; left:14px; z-index:2; width:34px; height:34px; border-radius:50%;
+    border:1px solid rgba(245,238,225,.4); background:rgba(15,11,6,.45); backdrop-filter:blur(2px);
+    display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-size:.85rem; color:#F8F2E6;
+  }
+  .cframe .cformat-pill{
+    position:absolute; left:14px; bottom:14px; z-index:2; font-size:.62rem; letter-spacing:.1em; text-transform:uppercase;
+    color:#F8F2E6; border:1px solid rgba(245,238,225,.4); padding:5px 11px; border-radius:20px; background:rgba(15,11,6,.5); backdrop-filter:blur(2px);
+  }
+  .cf-tall{width:190px; aspect-ratio:9/16;}
+  .cf-wide{width:320px; aspect-ratio:16/9;}
+  .cf-meta{width:216px; aspect-ratio:4/5;}
 
-  /* Reels / Shorts (vertical) */
-  .mock-tall{width:172px; aspect-ratio:9/16; border-radius:14px;}
-  .mock-tall .stories{position:absolute; top:8px; left:8px; right:8px; display:flex; gap:4px; z-index:2;}
-  .mock-tall .stories span{flex:1; height:2px; background:rgba(245,238,225,.35); border-radius:2px;}
-  .mock-tall .stories span:first-child{background:var(--gold-bright);}
-  .mock-tall .head{position:absolute; top:18px; left:10px; right:10px; display:flex; align-items:center; gap:7px; z-index:2;}
-  .mock-tall .head span{font-size:.68rem; color:#fff; font-weight:600; text-shadow:0 1px 3px rgba(0,0,0,.5);}
-  .mock-tall .rail{position:absolute; right:8px; bottom:54px; display:flex; flex-direction:column; align-items:center; gap:14px; z-index:2; color:#fff;}
-  .mock-tall .rail .ic-item{display:flex; flex-direction:column; align-items:center; gap:3px;}
-  .mock-tall .rail .ic-item i{font-size:.6rem; font-style:normal; text-shadow:0 1px 3px rgba(0,0,0,.5);}
-  .mock-tall .cap-line{position:absolute; left:10px; right:36px; bottom:14px; z-index:2; font-size:.68rem; color:#fff; text-shadow:0 1px 3px rgba(0,0,0,.5); line-height:1.4;}
-  .mock-tall .fade{position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.35) 0%, transparent 24%, transparent 62%, rgba(0,0,0,.7) 100%); z-index:1;}
-  .mock-tall .cta-chip{position:absolute; bottom:14px; right:8px; background:rgba(226,145,79,.9); color:#1D140B; font-size:.6rem; font-weight:700; letter-spacing:.04em; padding:5px 8px; border-radius:20px; z-index:2;}
+  .deliverables-block{margin-top:64px; padding-top:48px; border-top:1px solid rgba(245,238,225,.1);}
+  .deliverables-chips{display:flex; flex-wrap:wrap; gap:12px; margin-top:22px;}
+  .deliverables-chips span{
+    font-size:.8rem; color:var(--on-stage); border:1px solid rgba(245,238,225,.16);
+    padding:10px 18px; border-radius:4px; background:var(--stage-2);
+  }
+  .deliverables-note{margin-top:24px; font-size:.94rem; color:var(--on-stage-soft); line-height:1.7; max-width:68ch;}
 
-  /* Instagram post */
-  .mock-post{width:242px; border-radius:10px; background:var(--stage-2);}
-  .mock-post .p-head{display:flex; align-items:center; gap:9px; padding:10px 12px;}
-  .mock-post .p-head .h-name{font-size:.75rem; font-weight:600; color:var(--on-stage);}
-  .mock-post .p-head .h-loc{font-size:.62rem; color:var(--on-stage-soft);}
-  .mock-post .p-head .dots{margin-left:auto; color:var(--on-stage-soft);}
-  .mock-post .p-img{width:100%; aspect-ratio:1/1; overflow:hidden;}
-  .mock-post .p-img img{width:100%; height:100%; object-fit:cover; display:block;}
-  .mock-post .p-actions{display:flex; align-items:center; gap:12px; padding:10px 12px 4px; color:var(--on-stage);}
-  .mock-post .p-actions .spacer{margin-left:auto;}
-  .mock-post .p-likes{padding:2px 12px 12px; font-size:.72rem; color:var(--on-stage); font-weight:600;}
-  .mock-post .p-likes span{display:block; margin-top:3px; font-weight:400; color:var(--on-stage-soft);}
-
-  /* YouTube ad (landscape) */
-  .mock-wide{width:272px; aspect-ratio:16/9; border-radius:8px;}
-  .mock-wide .skip{position:absolute; top:9px; right:9px; font-size:.6rem; color:#fff; background:rgba(0,0,0,.45); padding:4px 8px; border-radius:3px; z-index:2;}
-  .mock-wide .adtag{position:absolute; bottom:24px; left:9px; font-size:.6rem; letter-spacing:.06em; color:#1D140B; background:var(--gold-bright); padding:3px 7px; border-radius:3px; font-weight:700; z-index:2;}
-  .mock-wide .dur{position:absolute; bottom:24px; right:9px; font-size:.62rem; color:#fff; background:rgba(0,0,0,.55); padding:3px 7px; border-radius:3px; z-index:2;}
-  .mock-wide .bar{position:absolute; left:0; right:0; bottom:0; height:3px; background:rgba(245,238,225,.25); z-index:2;}
-  .mock-wide .bar span{display:block; width:38%; height:100%; background:var(--gold-bright);}
-  .mock-wide .cplay{position:absolute; inset:0; display:flex; align-items:center; justify-content:center; z-index:2;}
-  .mock-wide .cplay .ring{width:40px; height:40px; border-radius:50%; border:1px solid rgba(245,238,225,.5); display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,.25);}
-
-  /* Facebook card */
-  .mock-fb{width:242px; border-radius:10px; background:var(--stage-2);}
-  .mock-fb .f-head{display:flex; align-items:center; gap:9px; padding:10px 12px;}
-  .mock-fb .f-head .h-name{font-size:.75rem; font-weight:600; color:var(--on-stage);}
-  .mock-fb .f-head .h-sub{font-size:.6rem; color:var(--on-stage-soft);}
-  .mock-fb .f-img{width:100%; aspect-ratio:4/3; overflow:hidden;}
-  .mock-fb .f-img img{width:100%; height:100%; object-fit:cover; display:block;}
-  .mock-fb .f-cta{display:flex; align-items:center; justify-content:space-between; padding:9px 12px; border-top:1px solid rgba(245,238,225,.08);}
-  .mock-fb .f-cta .lbl{font-size:.68rem; color:var(--on-stage-soft);}
-  .mock-fb .f-cta .btn-mini{font-size:.66rem; font-weight:700; color:#1D140B; background:var(--gold-bright); padding:6px 11px; border-radius:4px;}
-
-  /* Poster style (seasonal / family / launch) */
-  .mock-poster{width:196px; aspect-ratio:4/5; border-radius:10px;}
-  .mock-poster .fade{position:absolute; inset:0; background:linear-gradient(190deg, rgba(15,11,6,.05) 30%, rgba(15,11,6,.88) 100%); z-index:1;}
-  .mock-poster .tagpill{position:absolute; top:12px; left:12px; z-index:2; font-size:.6rem; letter-spacing:.12em; text-transform:uppercase; color:var(--gold-bright); border:1px solid rgba(226,145,79,.55); padding:4px 9px; border-radius:20px; background:rgba(15,11,6,.35);}
-  .mock-poster .p-title{position:absolute; left:14px; right:14px; bottom:14px; z-index:2; font-family:var(--serif); font-style:italic; color:#fff; font-size:1.28rem; line-height:1.15;}
-  .mock-poster .p-sub{position:absolute; left:14px; right:14px; bottom:52px; z-index:2; font-size:.62rem; letter-spacing:.1em; text-transform:uppercase; color:var(--on-stage-soft); text-shadow:0 1px 4px rgba(0,0,0,.6); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
-  .mock-poster .p-title{text-shadow:0 2px 8px rgba(0,0,0,.55);}
+  .campaign-cta{margin-top:64px; padding-top:48px; border-top:1px solid rgba(245,238,225,.1);}
+  .campaign-cta h3{font-family:var(--serif); font-size:clamp(1.5rem,2.8vw,2.1rem); color:var(--on-stage); line-height:1.2; font-weight:600;}
+  .campaign-cta p{margin-top:14px; font-size:1rem; color:var(--on-stage-soft); max-width:56ch; line-height:1.6;}
+  .campaign-cta .btn{margin-top:26px;}
 
   /* ============ CONTACT ============ */
   .contact-inner{max-width:720px;}
@@ -810,134 +785,101 @@
     </div>
   </section>
 
-  <!-- ============ DIGITAL / SOCIAL ============ -->
+  <!-- ============ CAMPAIGN ROLLOUT ============ -->
   <section class="section stage" style="padding-top:0;">
     <div class="container">
       <div class="section-head reveal" style="margin-bottom:34px;">
-        <div class="eyebrow">Digital / Social Media</div>
-        <h2 style="font-size:clamp(1.5rem,2.6vw,2rem);">Every campaign extends well beyond a single film.</h2>
-        <p>One shoot, reframed for every screen it needs to live on &mdash; mocked up here using stills from the FishFingers and ProDough Pumpkin Spice campaigns.</p>
+        <div class="eyebrow">Campaign Rollout</div>
+        <h2 style="font-size:clamp(1.7rem,3vw,2.3rem);">One Campaign. Built for <em style="font-style:italic; color:var(--gold-bright);">Every Screen.</em></h2>
+        <p>A single campaign concept can become a complete social rollout &mdash; adapted into platform-ready creative for Reels, Stories, Shorts, feeds and paid social.</p>
+        <p class="hero-flow" style="font-size:1rem;">From one core idea to a coordinated multi-platform campaign.</p>
       </div>
 
-      <div class="social-strip reveal-stagger">
+      <div class="flow-chain reveal" style="font-size:clamp(.92rem,1.6vw,1.15rem);">
+        <b>One Core Campaign</b><span class="arrow">&rarr;</span><b>Campaign Film</b><span class="arrow">&rarr;</span><b>Social Adaptation</b>
+      </div>
+      <div class="platform-chips reveal">
+        <span>Instagram Reels</span><span>Instagram Stories</span><span>YouTube</span><span>YouTube Shorts</span><span>Facebook &amp; Meta</span>
+      </div>
 
-        <!-- Instagram Reels -->
-        <div class="social-unit">
-          <div class="mock mock-tall">
+      <div class="campaign-strip reveal-stagger" style="margin-top:48px;">
+
+        <!-- 01 Instagram Reel -->
+        <div class="campaign-card">
+          <div class="cframe cf-tall">
             <img src="fishfingers_crunch_poster.jpg" alt="" style="object-position:50% 45%;">
-            <div class="fade"></div>
-            <div class="stories"><span></span><span></span><span></span></div>
-            <div class="head"><div class="avatar">S</div><span>sriramchand.consumerads</span></div>
-            <div class="rail">
-              <div class="ic-item"><svg class="ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7.5-4.6-10-9.3C.5 8 2 4 6 4c2.4 0 3.8 1.4 6 4 2.2-2.6 3.6-4 6-4 4 0 5.5 4 4 7.7C19.5 16.4 12 21 12 21Z"/></svg><i>3.2k</i></div>
-              <div class="ic-item"><svg class="ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.4 8.4 0 0 1-8.9 8.4 9 9 0 0 1-3.1-.6L3 21l1.8-5A8.4 8.4 0 1 1 21 11.5Z"/></svg><i>184</i></div>
-              <div class="ic-item"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7Z"/></svg><i>Share</i></div>
-            </div>
-            <div class="cap-line">"Crunch Reveal" &mdash; the bite that steals the scroll. &#9834; original audio</div>
+            <div class="cfade"></div>
+            <span class="cnum">01</span>
+            <span class="cformat-pill">Reel &middot; 9:16</span>
           </div>
-          <div class="plat-row"><span class="plat">Instagram</span><span class="fmt">&middot; Reels</span></div>
-          <p class="cap">Short-form cinematic cutdowns built for the scroll.</p>
+          <div class="cplat-row"><span class="cplat">Instagram</span><span class="ctag">Campaign Creative</span></div>
+          <p class="ccap">Short-form campaign creative designed for discovery, product storytelling and mobile-first viewing.</p>
         </div>
 
-        <!-- Instagram Posts -->
-        <div class="social-unit">
-          <div class="mock-post mock">
-            <div class="p-head"><div class="avatar">S</div><div><div class="h-name">sriramchand.consumerads</div><div class="h-loc">Hyderabad, India</div></div><div class="dots">&#8942;</div></div>
-            <div class="p-img"><img src="pumpkinspice_25gprotein_poster.jpg" alt=""></div>
-            <div class="p-actions">
-              <svg class="ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7.5-4.6-10-9.3C.5 8 2 4 6 4c2.4 0 3.8 1.4 6 4 2.2-2.6 3.6-4 6-4 4 0 5.5 4 4 7.7C19.5 16.4 12 21 12 21Z"/></svg>
-              <svg class="ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.4 8.4 0 0 1-8.9 8.4 9 9 0 0 1-3.1-.6L3 21l1.8-5A8.4 8.4 0 1 1 21 11.5Z"/></svg>
-              <svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7Z"/></svg>
-              <svg class="ic spacer" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3h12v18l-6-4-6 4V3Z"/></svg>
-            </div>
-            <div class="p-likes">Liked by prodough.official and 1,204 others<span>Craving &rarr; bite &rarr; surprise &rarr; brand.</span></div>
-          </div>
-          <div class="plat-row"><span class="plat">Instagram</span><span class="fmt">&middot; Posts</span></div>
-          <p class="cap">Editorial product and lifestyle grids.</p>
-        </div>
-
-        <!-- YouTube Ads -->
-        <div class="social-unit">
-          <div class="mock mock-wide">
-            <img src="fishfingers_airfryer_poster.jpg" alt="" style="object-position:50% 30%;">
-            <div class="skip">Skip Ad &#9656;</div>
-            <div class="cplay"><div class="ring"><svg width="14" height="14" viewBox="0 0 18 18" fill="none"><path d="M6 3.5L14 9L6 14.5V3.5Z" fill="#fff"/></svg></div></div>
-            <div class="adtag">Ad</div>
-            <div class="dur">0:20</div>
-            <div class="bar"><span></span></div>
-          </div>
-          <div class="plat-row"><span class="plat">YouTube</span><span class="fmt">&middot; Ads</span></div>
-          <p class="cap">Full campaign films for discovery and brand recall.</p>
-        </div>
-
-        <!-- YouTube Shorts -->
-        <div class="social-unit">
-          <div class="mock mock-tall">
-            <img src="pumpkinspice_thisisprotein_poster.jpg" alt="" style="object-position:60% 20%;">
-            <div class="fade"></div>
-            <div class="head"><div class="avatar">S</div><span>Sriramchand</span></div>
-            <div class="rail">
-              <div class="ic-item"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 22V11l5-9 1 1v6h6l1 3-3 10H10l-3-1Z"/></svg><i>2.1k</i></div>
-              <div class="ic-item"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="transform:scaleY(-1)"><path d="M7 22V11l5-9 1 1v6h6l1 3-3 10H10l-3-1Z"/></svg><i>Dislike</i></div>
-              <div class="ic-item"><svg class="ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.4 8.4 0 0 1-8.9 8.4 9 9 0 0 1-3.1-.6L3 21l1.8-5A8.4 8.4 0 1 1 21 11.5Z"/></svg><i>96</i></div>
-            </div>
-            <div class="cta-chip">Subscribe</div>
-          </div>
-          <div class="plat-row"><span class="plat">YouTube</span><span class="fmt">&middot; Shorts</span></div>
-          <p class="cap">Bite-sized story moments from the full campaign.</p>
-        </div>
-
-        <!-- Facebook Campaigns -->
-        <div class="social-unit">
-          <div class="mock-fb mock">
-            <div class="f-head"><div class="avatar">S</div><div><div class="h-name">Sriramchand Consumer Ad Stories</div><div class="h-sub">Sponsored</div></div></div>
-            <div class="f-img"><img src="fishfingers_crunch_poster.jpg" alt="" style="object-position:45% 50%;"></div>
-            <div class="f-cta"><span class="lbl">gadreseafood.com</span><span class="btn-mini">Shop Now</span></div>
-          </div>
-          <div class="plat-row"><span class="plat">Facebook</span><span class="fmt">&middot; Campaigns</span></div>
-          <p class="cap">Targeted retail and seasonal campaign rollouts.</p>
-        </div>
-
-        <!-- Seasonal Campaigns -->
-        <div class="social-unit">
-          <div class="mock mock-poster">
+        <!-- 02 Instagram Story -->
+        <div class="campaign-card">
+          <div class="cframe cf-tall">
             <img src="pumpkinspice_25gprotein_poster.jpg" alt="" style="object-position:55% 30%;">
-            <div class="fade"></div>
-            <div class="tagpill">Seasonal</div>
-            <div class="p-sub">Pumpkin Spice Launch</div>
-            <div class="p-title">The Taste of Fall.</div>
+            <div class="cfade"></div>
+            <span class="cnum">02</span>
+            <span class="cformat-pill">Story &middot; 9:16</span>
           </div>
-          <div class="plat-row"><span class="plat">Seasonal</span><span class="fmt">&middot; Campaigns</span></div>
-          <p class="cap">Seasonal and limited-edition launch storytelling.</p>
+          <div class="cplat-row"><span class="cplat">Instagram</span><span class="ctag">Campaign Creative</span></div>
+          <p class="ccap">Full-screen campaign asset designed for Stories, launches and promotional messaging.</p>
         </div>
 
-        <!-- Family / Mealtime Campaigns -->
-        <div class="social-unit">
-          <div class="mock mock-poster">
-            <img src="fishfingers_airfryer_poster.jpg" alt="" style="object-position:50% 25%;">
-            <div class="fade"></div>
-            <div class="tagpill">Family</div>
-            <div class="p-sub">FishFingers Ad</div>
-            <div class="p-title">Dinner, Sorted.</div>
+        <!-- 03 YouTube -->
+        <div class="campaign-card">
+          <div class="cframe cf-wide">
+            <img src="fishfingers_airfryer_poster.jpg" alt="" style="object-position:50% 30%;">
+            <div class="cfade"></div>
+            <span class="cnum">03</span>
+            <span class="cformat-pill">Video Ad &middot; 16:9</span>
           </div>
-          <div class="plat-row"><span class="plat">Family</span><span class="fmt">&middot; Campaigns</span></div>
-          <p class="cap">Everyday family mealtime advertising.</p>
+          <div class="cplat-row"><span class="cplat">YouTube</span><span class="ctag">Campaign Creative</span></div>
+          <p class="ccap">Full campaign film designed for YouTube advertising, brand storytelling and product discovery.</p>
         </div>
 
-        <!-- Product Launches -->
-        <div class="social-unit">
-          <div class="mock mock-poster">
+        <!-- 04 YouTube Short -->
+        <div class="campaign-card">
+          <div class="cframe cf-tall">
             <img src="pumpkinspice_thisisprotein_poster.jpg" alt="" style="object-position:60% 20%;">
-            <div class="fade"></div>
-            <div class="tagpill">New</div>
-            <div class="p-sub">Flavor Reveal</div>
-            <div class="p-title">Now Arriving.</div>
+            <div class="cfade"></div>
+            <span class="cnum">04</span>
+            <span class="cformat-pill">Short &middot; 9:16</span>
           </div>
-          <div class="plat-row"><span class="plat">Launch</span><span class="fmt">&middot; Products</span></div>
-          <p class="cap">New-flavor reveal storytelling.</p>
+          <div class="cplat-row"><span class="cplat">YouTube</span><span class="ctag">Campaign Creative</span></div>
+          <p class="ccap">Fast-paced vertical cut designed for short-form viewing and campaign reach.</p>
+        </div>
+
+        <!-- 05 Facebook / Meta -->
+        <div class="campaign-card">
+          <div class="cframe cf-meta">
+            <img src="fishfingers_crunch_poster.jpg" alt="" style="object-position:45% 50%;">
+            <div class="cfade"></div>
+            <span class="cnum">05</span>
+            <span class="cformat-pill">Feed Ad &middot; 4:5</span>
+          </div>
+          <div class="cplat-row"><span class="cplat">Meta</span><span class="ctag">Campaign Creative</span></div>
+          <p class="ccap">Feed-ready campaign creative adapted for Meta organic and paid-social placements.</p>
         </div>
 
       </div>
+
+      <div class="deliverables-block reveal">
+        <div class="eyebrow">Campaign Deliverables</div>
+        <div class="deliverables-chips">
+          <span>Hero Campaign Film</span><span>Vertical Reels</span><span>Stories</span><span>YouTube Shorts</span><span>Feed Creatives</span><span>Paid Social Ads</span><span>Product Cutdowns</span><span>Brand End Cards</span>
+        </div>
+        <p class="deliverables-note">Every campaign is designed with multiple placements in mind, allowing the same creative idea to remain visually consistent while being adapted to the format, pacing and viewing behaviour of each platform.</p>
+      </div>
+
+      <div class="campaign-cta reveal">
+        <h3>From One Idea to a Complete Campaign.</h3>
+        <p>Have a product or brand story? I can turn it into a campaign built for every screen.</p>
+        <a class="btn btn-solid" href="#contact">Build Your Campaign &rarr;</a>
+      </div>
+
     </div>
   </section>
 
